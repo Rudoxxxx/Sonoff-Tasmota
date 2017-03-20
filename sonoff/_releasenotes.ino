@@ -1,4 +1,30 @@
-/* 4.0.4 20170312
+/* 4.0.7 20170319
+ * Increased Sonoff Led PWM frequency from 432 to 1000
+ * Fix possible watch dog reboot after changing module type on web page
+ * Fix reporting of GPIO usage from web page
+ * Fix Sonoff Led blank during firmware upgrade
+ * Fix Sonoff Led flicker and possible flash corruption by using latest Arduino-esp8266 versions
+ *   of pwm core files included in sonoff library (#211)
+ * Add PWM output control with commands PWM1 to PWM5 using user selectable GPIOs (#211)
+ * Fix exceptions due to low values of commands HlwPCal (10000), HlwUCal (1000) and HlwICal (2500) (#223)
+ * Add Switch state to sensor status (#227, #233)
+ * Add user configuarble GPIO to module Sonoff Touch (#228)
+ * Add define WEB_PORT to user_config.h to change default web server port from 80 (#232)
+ * Fix failed Ota Firmware upgrade started from Web page (#235)
+ *
+ * 4.0.6 20170316
+ * Fix to better find device by Wifi hostname
+ * Fix compile error when some I2C devices are disabled
+ * Add (experimental) support for SHT1X emulating I2C (#97)
+ * Add ADC to ElectroDragon (#203)
+ * Add support for Sonoff Dev (#206)
+ *
+ * 4.0.5 20170314
+ * Add command Status 11 to show power status with Vcc if define USE_ADC_VCC is enabled (default)
+ * Add ADC input to Sonoff SV and Wemos D1 mini - Needs recompile with define USE_ADC_VCC disabled (#137)
+ * Add MQTT host:port to timeout message (#199)
+ *
+ * 4.0.4 20170312
  * Add pulse timers for up to 4 relays (#106)
  * Fix Sonoff Led power state when dimmer or color is 0 (#176)
  * Add command NtpServer<x> to configure up to three NTP servers (#177)

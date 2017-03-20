@@ -191,6 +191,7 @@ struct SYSCFG {
 
   char          ntp_server[3][33];
   uint16_t      pulsetime[MAX_PULSETIMERS];
+  uint16_t      pwmvalue[5];
 
 } sysCfg;
 
@@ -200,4 +201,9 @@ struct RTCMEM {
   byte          nu1;
   unsigned long hlw_kWhtoday;
 } rtcMem;
+
+// See issue https://github.com/esp8266/Arduino/issues/2913  
+#ifdef USE_ADC_VCC
+  ADC_MODE(ADC_VCC);                        // Set ADC input for Power Supply Voltage usage
+#endif
 
